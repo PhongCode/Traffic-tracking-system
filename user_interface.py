@@ -78,7 +78,7 @@ class Ui_MainWindow(object):
 "}")
         self.Setting.setObjectName("Setting")
         self.Source = QtWidgets.QGroupBox(self.Setting)
-        self.Source.setGeometry(QtCore.QRect(10, 10, 471, 151))
+        self.Source.setGeometry(QtCore.QRect(10, 10, 471, 131))
         self.Source.setStyleSheet("QGroupBox#Source{\n"
 "    background-color: #f2f2f2;\n"
 "    border: none;\n"
@@ -164,7 +164,7 @@ class Ui_MainWindow(object):
         self.Title.raise_()
         self.Name.raise_()
         self.Save = QtWidgets.QGroupBox(self.Setting)
-        self.Save.setGeometry(QtCore.QRect(10, 170, 471, 181))
+        self.Save.setGeometry(QtCore.QRect(10, 150, 471, 161))
         self.Save.setStyleSheet("QGroupBox#Save{\n"
 "    background-color: #f2f2f2;\n"
 "    border: none;\n"
@@ -244,7 +244,7 @@ class Ui_MainWindow(object):
 "")
         self.Name_2.setObjectName("Name_2")
         self.Result_dir = QtWidgets.QLabel(self.Save)
-        self.Result_dir.setGeometry(QtCore.QRect(20, 120, 311, 51))
+        self.Result_dir.setGeometry(QtCore.QRect(20, 110, 311, 41))
         self.Result_dir.setStyleSheet("QLabel#Result_dir {\n"
 "      background-color: none;\n"
 "      border: none; \n"
@@ -264,7 +264,7 @@ class Ui_MainWindow(object):
 "}")
         self.Copy_Right.setObjectName("Copy_Right")
         self.Total = QtWidgets.QGroupBox(self.Setting)
-        self.Total.setGeometry(QtCore.QRect(500, 10, 371, 291))
+        self.Total.setGeometry(QtCore.QRect(500, 10, 371, 341))
         self.Total.setStyleSheet("QGroupBox#Total{\n"
 "    background-color: #f2f2f2;\n"
 "    border: none;\n"
@@ -274,25 +274,353 @@ class Ui_MainWindow(object):
 "")
         self.Total.setTitle("")
         self.Total.setObjectName("Total")
-        self.Tcounter = QtWidgets.QLabel(self.Total)
-        self.Tcounter.setGeometry(QtCore.QRect(20, 20, 331, 251))
+        self.TLable0 = QtWidgets.QLabel(self.Total)
+        self.TLable0.setGeometry(QtCore.QRect(30, 50, 151, 21))
         font = QtGui.QFont()
         font.setFamily("Microsoft JhengHei")
-        font.setPointSize(12)
-        self.Tcounter.setFont(font)
-        self.Tcounter.setStyleSheet("QLabel#Tcounter {\n"
+        font.setPointSize(11)
+        self.TLable0.setFont(font)
+        self.TLable0.setStyleSheet("QLabel {\n"
 "      background-color: none;\n"
 "      border: none; \n"
 "    color: black;\n"
 "}")
-        self.Tcounter.setTextFormat(QtCore.Qt.RichText)
-        self.Tcounter.setScaledContents(False)
-        self.Tcounter.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
-        self.Tcounter.setWordWrap(True)
-        self.Tcounter.setIndent(0)
-        self.Tcounter.setObjectName("Tcounter")
+        self.TLable0.setTextFormat(QtCore.Qt.RichText)
+        self.TLable0.setScaledContents(False)
+        self.TLable0.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLable0.setWordWrap(True)
+        self.TLable0.setIndent(0)
+        self.TLable0.setObjectName("TLable0")
+        self.TLable1 = QtWidgets.QLabel(self.Total)
+        self.TLable1.setGeometry(QtCore.QRect(30, 100, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLable1.setFont(font)
+        self.TLable1.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLable1.setTextFormat(QtCore.Qt.RichText)
+        self.TLable1.setScaledContents(False)
+        self.TLable1.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLable1.setWordWrap(True)
+        self.TLable1.setIndent(0)
+        self.TLable1.setObjectName("TLable1")
+        self.TLabel2 = QtWidgets.QLabel(self.Total)
+        self.TLabel2.setGeometry(QtCore.QRect(30, 150, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2.setFont(font)
+        self.TLabel2.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2.setScaledContents(False)
+        self.TLabel2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2.setWordWrap(True)
+        self.TLabel2.setIndent(0)
+        self.TLabel2.setObjectName("TLabel2")
+        self.Tcounter_0 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_0.setGeometry(QtCore.QRect(290, 50, 31, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_0.setFont(font)
+        self.Tcounter_0.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_0.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_0.setScaledContents(False)
+        self.Tcounter_0.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_0.setWordWrap(True)
+        self.Tcounter_0.setIndent(0)
+        self.Tcounter_0.setObjectName("Tcounter_0")
+        self.Tcounter_1 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_1.setGeometry(QtCore.QRect(290, 100, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_1.setFont(font)
+        self.Tcounter_1.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_1.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_1.setScaledContents(False)
+        self.Tcounter_1.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_1.setWordWrap(True)
+        self.Tcounter_1.setIndent(0)
+        self.Tcounter_1.setObjectName("Tcounter_1")
+        self.Tcounter_2 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_2.setGeometry(QtCore.QRect(290, 150, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_2.setFont(font)
+        self.Tcounter_2.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_2.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_2.setScaledContents(False)
+        self.Tcounter_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_2.setWordWrap(True)
+        self.Tcounter_2.setIndent(0)
+        self.Tcounter_2.setObjectName("Tcounter_2")
+        self.Filename_3 = QtWidgets.QLabel(self.Total)
+        self.Filename_3.setGeometry(QtCore.QRect(10, 40, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_3.setFont(font)
+        self.Filename_3.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_3.setScaledContents(False)
+        self.Filename_3.setWordWrap(False)
+        self.Filename_3.setIndent(50)
+        self.Filename_3.setObjectName("Filename_3")
+        self.Filename_4 = QtWidgets.QLabel(self.Total)
+        self.Filename_4.setGeometry(QtCore.QRect(10, 90, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_4.setFont(font)
+        self.Filename_4.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_4.setScaledContents(False)
+        self.Filename_4.setWordWrap(False)
+        self.Filename_4.setIndent(50)
+        self.Filename_4.setObjectName("Filename_4")
+        self.Filename_5 = QtWidgets.QLabel(self.Total)
+        self.Filename_5.setGeometry(QtCore.QRect(10, 140, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_5.setFont(font)
+        self.Filename_5.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_5.setScaledContents(False)
+        self.Filename_5.setWordWrap(False)
+        self.Filename_5.setIndent(50)
+        self.Filename_5.setObjectName("Filename_5")
+        self.Filename_6 = QtWidgets.QLabel(self.Total)
+        self.Filename_6.setGeometry(QtCore.QRect(10, 190, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_6.setFont(font)
+        self.Filename_6.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_6.setScaledContents(False)
+        self.Filename_6.setWordWrap(False)
+        self.Filename_6.setIndent(50)
+        self.Filename_6.setObjectName("Filename_6")
+        self.Filename_7 = QtWidgets.QLabel(self.Total)
+        self.Filename_7.setGeometry(QtCore.QRect(10, 240, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_7.setFont(font)
+        self.Filename_7.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_7.setScaledContents(False)
+        self.Filename_7.setWordWrap(False)
+        self.Filename_7.setIndent(50)
+        self.Filename_7.setObjectName("Filename_7")
+        self.Filename_8 = QtWidgets.QLabel(self.Total)
+        self.Filename_8.setGeometry(QtCore.QRect(10, 290, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_8.setFont(font)
+        self.Filename_8.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_8.setScaledContents(False)
+        self.Filename_8.setWordWrap(False)
+        self.Filename_8.setIndent(50)
+        self.Filename_8.setObjectName("Filename_8")
+        self.Title_4 = QtWidgets.QLabel(self.Total)
+        self.Title_4.setGeometry(QtCore.QRect(0, 0, 161, 31))
+        self.Title_4.setStyleSheet("QLabel {\n"
+"    background-color: rgb(90, 90, 90);\n"
+"    border: none; \n"
+"    border-bottom-right-radius : 15px;\n"
+"}")
+        self.Title_4.setText("")
+        self.Title_4.setObjectName("Title_4")
+        self.Name_4 = QtWidgets.QLabel(self.Total)
+        self.Name_4.setGeometry(QtCore.QRect(10, 5, 141, 20))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Name_4.setFont(font)
+        self.Name_4.setStyleSheet("QLabel {\n"
+"    background-color: none;\n"
+"    color: white;\n"
+"    border: none; \n"
+"    border-radius: 8px;\n"
+"}\n"
+"")
+        self.Name_4.setObjectName("Name_4")
+        self.TLabel2_2 = QtWidgets.QLabel(self.Total)
+        self.TLabel2_2.setGeometry(QtCore.QRect(30, 200, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_2.setFont(font)
+        self.TLabel2_2.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_2.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_2.setScaledContents(False)
+        self.TLabel2_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_2.setWordWrap(True)
+        self.TLabel2_2.setIndent(0)
+        self.TLabel2_2.setObjectName("TLabel2_2")
+        self.TLabel2_3 = QtWidgets.QLabel(self.Total)
+        self.TLabel2_3.setGeometry(QtCore.QRect(30, 250, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_3.setFont(font)
+        self.TLabel2_3.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_3.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_3.setScaledContents(False)
+        self.TLabel2_3.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_3.setWordWrap(True)
+        self.TLabel2_3.setIndent(0)
+        self.TLabel2_3.setObjectName("TLabel2_3")
+        self.TLabel2_4 = QtWidgets.QLabel(self.Total)
+        self.TLabel2_4.setGeometry(QtCore.QRect(30, 300, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_4.setFont(font)
+        self.TLabel2_4.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_4.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_4.setScaledContents(False)
+        self.TLabel2_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_4.setWordWrap(True)
+        self.TLabel2_4.setIndent(0)
+        self.TLabel2_4.setObjectName("TLabel2_4")
+        self.Tcounter_3 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_3.setGeometry(QtCore.QRect(290, 200, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_3.setFont(font)
+        self.Tcounter_3.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_3.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_3.setScaledContents(False)
+        self.Tcounter_3.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_3.setWordWrap(True)
+        self.Tcounter_3.setIndent(0)
+        self.Tcounter_3.setObjectName("Tcounter_3")
+        self.Tcounter_4 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_4.setGeometry(QtCore.QRect(290, 250, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_4.setFont(font)
+        self.Tcounter_4.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_4.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_4.setScaledContents(False)
+        self.Tcounter_4.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_4.setWordWrap(True)
+        self.Tcounter_4.setIndent(0)
+        self.Tcounter_4.setObjectName("Tcounter_4")
+        self.Tcounter_5 = QtWidgets.QLabel(self.Total)
+        self.Tcounter_5.setGeometry(QtCore.QRect(290, 300, 21, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Tcounter_5.setFont(font)
+        self.Tcounter_5.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Tcounter_5.setTextFormat(QtCore.Qt.RichText)
+        self.Tcounter_5.setScaledContents(False)
+        self.Tcounter_5.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Tcounter_5.setWordWrap(True)
+        self.Tcounter_5.setIndent(0)
+        self.Tcounter_5.setObjectName("Tcounter_5")
+        self.Filename_3.raise_()
+        self.TLable0.raise_()
+        self.Tcounter_0.raise_()
+        self.Filename_4.raise_()
+        self.TLable1.raise_()
+        self.Tcounter_1.raise_()
+        self.Filename_5.raise_()
+        self.TLabel2.raise_()
+        self.Tcounter_2.raise_()
+        self.Filename_6.raise_()
+        self.Filename_7.raise_()
+        self.Filename_8.raise_()
+        self.Title_4.raise_()
+        self.Name_4.raise_()
+        self.TLabel2_2.raise_()
+        self.TLabel2_3.raise_()
+        self.TLabel2_4.raise_()
+        self.Tcounter_3.raise_()
+        self.Tcounter_4.raise_()
+        self.Tcounter_5.raise_()
         self.Violation = QtWidgets.QGroupBox(self.Setting)
-        self.Violation.setGeometry(QtCore.QRect(500, 310, 371, 201))
+        self.Violation.setGeometry(QtCore.QRect(500, 360, 371, 141))
         self.Violation.setStyleSheet("QGroupBox#Violation{\n"
 "    background-color: #f2f2f2;\n"
 "    border: none;\n"
@@ -303,7 +631,7 @@ class Ui_MainWindow(object):
         self.Violation.setTitle("")
         self.Violation.setObjectName("Violation")
         self.Vcounter = QtWidgets.QLabel(self.Violation)
-        self.Vcounter.setGeometry(QtCore.QRect(20, 20, 321, 161))
+        self.Vcounter.setGeometry(QtCore.QRect(290, 50, 41, 21))
         font = QtGui.QFont()
         font.setFamily("Microsoft JhengHei")
         font.setPointSize(12)
@@ -319,8 +647,124 @@ class Ui_MainWindow(object):
         self.Vcounter.setWordWrap(False)
         self.Vcounter.setIndent(0)
         self.Vcounter.setObjectName("Vcounter")
+        self.Filename_9 = QtWidgets.QLabel(self.Violation)
+        self.Filename_9.setGeometry(QtCore.QRect(10, 40, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_9.setFont(font)
+        self.Filename_9.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_9.setScaledContents(False)
+        self.Filename_9.setWordWrap(False)
+        self.Filename_9.setIndent(50)
+        self.Filename_9.setObjectName("Filename_9")
+        self.Filename_10 = QtWidgets.QLabel(self.Violation)
+        self.Filename_10.setGeometry(QtCore.QRect(10, 90, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Filename_10.setFont(font)
+        self.Filename_10.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Filename_10.setScaledContents(False)
+        self.Filename_10.setWordWrap(False)
+        self.Filename_10.setIndent(50)
+        self.Filename_10.setObjectName("Filename_10")
+        self.Vcounter_2 = QtWidgets.QLabel(self.Violation)
+        self.Vcounter_2.setGeometry(QtCore.QRect(290, 100, 41, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(12)
+        self.Vcounter_2.setFont(font)
+        self.Vcounter_2.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.Vcounter_2.setTextFormat(QtCore.Qt.RichText)
+        self.Vcounter_2.setScaledContents(False)
+        self.Vcounter_2.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.Vcounter_2.setWordWrap(False)
+        self.Vcounter_2.setIndent(0)
+        self.Vcounter_2.setObjectName("Vcounter_2")
+        self.Name_5 = QtWidgets.QLabel(self.Violation)
+        self.Name_5.setGeometry(QtCore.QRect(10, 5, 121, 20))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Name_5.setFont(font)
+        self.Name_5.setStyleSheet("QLabel {\n"
+"    background-color: none;\n"
+"    color: white;\n"
+"    border: none; \n"
+"    border-radius: 8px;\n"
+"}\n"
+"")
+        self.Name_5.setObjectName("Name_5")
+        self.Title_5 = QtWidgets.QLabel(self.Violation)
+        self.Title_5.setGeometry(QtCore.QRect(0, 0, 141, 31))
+        self.Title_5.setStyleSheet("QLabel {\n"
+"    background-color: rgb(90, 90, 90);\n"
+"    border: none; \n"
+"    border-bottom-right-radius : 15px;\n"
+"}")
+        self.Title_5.setText("")
+        self.Title_5.setObjectName("Title_5")
+        self.TLabel2_5 = QtWidgets.QLabel(self.Violation)
+        self.TLabel2_5.setGeometry(QtCore.QRect(30, 50, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_5.setFont(font)
+        self.TLabel2_5.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_5.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_5.setScaledContents(False)
+        self.TLabel2_5.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_5.setWordWrap(True)
+        self.TLabel2_5.setIndent(0)
+        self.TLabel2_5.setObjectName("TLabel2_5")
+        self.TLabel2_6 = QtWidgets.QLabel(self.Violation)
+        self.TLabel2_6.setGeometry(QtCore.QRect(30, 100, 181, 21))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(11)
+        self.TLabel2_6.setFont(font)
+        self.TLabel2_6.setStyleSheet("QLabel {\n"
+"      background-color: none;\n"
+"      border: none; \n"
+"    color: black;\n"
+"}")
+        self.TLabel2_6.setTextFormat(QtCore.Qt.RichText)
+        self.TLabel2_6.setScaledContents(False)
+        self.TLabel2_6.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignTop)
+        self.TLabel2_6.setWordWrap(True)
+        self.TLabel2_6.setIndent(0)
+        self.TLabel2_6.setObjectName("TLabel2_6")
+        self.Filename_9.raise_()
+        self.Vcounter.raise_()
+        self.Filename_10.raise_()
+        self.Vcounter_2.raise_()
+        self.Title_5.raise_()
+        self.Name_5.raise_()
+        self.TLabel2_5.raise_()
+        self.TLabel2_6.raise_()
         self.Display = QtWidgets.QGroupBox(self.Setting)
-        self.Display.setGeometry(QtCore.QRect(10, 360, 471, 151))
+        self.Display.setGeometry(QtCore.QRect(10, 320, 471, 101))
         self.Display.setStyleSheet("QGroupBox#Display{\n"
 "    background-color: #f2f2f2;\n"
 "    border: none;\n"
@@ -356,77 +800,160 @@ class Ui_MainWindow(object):
 "")
         self.Name_3.setObjectName("Name_3")
         self.ShowLabel = QtWidgets.QCheckBox(self.Display)
-        self.ShowLabel.setGeometry(QtCore.QRect(10, 60, 201, 21))
+        self.ShowLabel.setGeometry(QtCore.QRect(10, 40, 201, 21))
         self.ShowLabel.setStyleSheet("QCheckBox {\n"
 "background-color: None;\n"
 "}")
         self.ShowLabel.setChecked(True)
         self.ShowLabel.setObjectName("ShowLabel")
         self.ShowBox = QtWidgets.QCheckBox(self.Display)
-        self.ShowBox.setGeometry(QtCore.QRect(10, 90, 201, 21))
+        self.ShowBox.setGeometry(QtCore.QRect(240, 40, 201, 21))
         self.ShowBox.setStyleSheet("QCheckBox {\n"
 "background-color: None;\n"
 "}")
         self.ShowBox.setObjectName("ShowBox")
         self.SaveImage = QtWidgets.QCheckBox(self.Display)
-        self.SaveImage.setGeometry(QtCore.QRect(250, 60, 211, 21))
+        self.SaveImage.setGeometry(QtCore.QRect(10, 60, 211, 21))
         self.SaveImage.setStyleSheet("QCheckBox {\n"
 "background-color: None;\n"
 "}")
         self.SaveImage.setChecked(True)
         self.SaveImage.setObjectName("SaveImage")
         self.SaveVideo = QtWidgets.QCheckBox(self.Display)
-        self.SaveVideo.setGeometry(QtCore.QRect(250, 90, 211, 21))
+        self.SaveVideo.setGeometry(QtCore.QRect(240, 60, 211, 21))
         self.SaveVideo.setStyleSheet("QCheckBox {\n"
 "background-color: None;\n"
 "}")
         self.SaveVideo.setChecked(True)
         self.SaveVideo.setObjectName("SaveVideo")
         self.line = QtWidgets.QFrame(self.Setting)
-        self.line.setGeometry(QtCore.QRect(482, 10, 16, 501))
+        self.line.setGeometry(QtCore.QRect(482, 10, 16, 491))
         self.line.setFrameShadow(QtWidgets.QFrame.Raised)
         self.line.setMidLineWidth(0)
         self.line.setFrameShape(QtWidgets.QFrame.VLine)
         self.line.setObjectName("line")
+        self.tabWidget = QtWidgets.QTabWidget(self.Setting)
+        self.tabWidget.setGeometry(QtCore.QRect(10, 430, 471, 71))
+        font = QtGui.QFont()
+        font.setBold(True)
+        font.setWeight(75)
+        self.tabWidget.setFont(font)
+        self.tabWidget.setStyleSheet("QTabBar::tab { \n"
+"height: 20px; \n"
+"width: 80px;\n"
+"background-color:  rgb(90, 90, 90);\n"
+"border-top-right-radius : 5px;\n"
+"border-top-left-radius : 5px;\n"
+"color: #fff;\n"
+"\n"
+"}\n"
+"\n"
+"QTabWidget::pane {\n"
+"border: 0px;\n"
+"}\n"
+"\n"
+"QTabBar::tab:selected {\n"
+"background-color: #f2f2f2;\n"
+"color: #000;\n"
+"}\n"
+"\n"
+"QTabBar::tab:hover {\n"
+"background-color: #f2f2f2;\n"
+"}")
+        self.tabWidget.setObjectName("tabWidget")
+        self.left_lane = QtWidgets.QWidget()
+        self.left_lane.setStyleSheet("QWidget {\n"
+"background-color: #f2f2f2;\n"
+"}")
+        self.left_lane.setObjectName("left_lane")
+        self.turn_left_left_lane = QtWidgets.QCheckBox(self.left_lane)
+        self.turn_left_left_lane.setGeometry(QtCore.QRect(20, 20, 91, 17))
+        self.turn_left_left_lane.setObjectName("turn_left_left_lane")
+        self.go_forward_left_lane = QtWidgets.QCheckBox(self.left_lane)
+        self.go_forward_left_lane.setGeometry(QtCore.QRect(140, 20, 91, 17))
+        self.go_forward_left_lane.setObjectName("go_forward_left_lane")
+        self.turn_right_left_lane = QtWidgets.QCheckBox(self.left_lane)
+        self.turn_right_left_lane.setGeometry(QtCore.QRect(260, 20, 91, 17))
+        self.turn_right_left_lane.setObjectName("turn_right_left_lane")
+        self.red_light_left = QtWidgets.QCheckBox(self.left_lane)
+        self.red_light_left.setGeometry(QtCore.QRect(380, 20, 71, 17))
+        self.red_light_left.setObjectName("red_light_left")
+        self.tabWidget.addTab(self.left_lane, "")
+        self.center_lane = QtWidgets.QWidget()
+        self.center_lane.setStyleSheet("QWidget {\n"
+"background-color: #f2f2f2;\n"
+"}")
+        self.center_lane.setObjectName("center_lane")
+        self.turn_right_center_lane = QtWidgets.QCheckBox(self.center_lane)
+        self.turn_right_center_lane.setGeometry(QtCore.QRect(260, 20, 91, 17))
+        self.turn_right_center_lane.setObjectName("turn_right_center_lane")
+        self.go_forwar_center_lane = QtWidgets.QCheckBox(self.center_lane)
+        self.go_forwar_center_lane.setGeometry(QtCore.QRect(140, 20, 91, 17))
+        self.go_forwar_center_lane.setObjectName("go_forwar_center_lane")
+        self.turn_left_center_lane = QtWidgets.QCheckBox(self.center_lane)
+        self.turn_left_center_lane.setGeometry(QtCore.QRect(20, 20, 91, 17))
+        self.turn_left_center_lane.setObjectName("turn_left_center_lane")
+        self.red_light_center = QtWidgets.QCheckBox(self.center_lane)
+        self.red_light_center.setGeometry(QtCore.QRect(380, 20, 71, 17))
+        self.red_light_center.setObjectName("red_light_center")
+        self.tabWidget.addTab(self.center_lane, "")
+        self.right_lane = QtWidgets.QWidget()
+        self.right_lane.setStyleSheet("QWidget {\n"
+"background-color: #f2f2f2;\n"
+"}")
+        self.right_lane.setObjectName("right_lane")
+        self.turn_right_right_lane = QtWidgets.QCheckBox(self.right_lane)
+        self.turn_right_right_lane.setGeometry(QtCore.QRect(260, 20, 91, 17))
+        self.turn_right_right_lane.setObjectName("turn_right_right_lane")
+        self.go_forward_right_lane = QtWidgets.QCheckBox(self.right_lane)
+        self.go_forward_right_lane.setGeometry(QtCore.QRect(140, 20, 91, 17))
+        self.go_forward_right_lane.setObjectName("go_forward_right_lane")
+        self.turn_left_right_lane = QtWidgets.QCheckBox(self.right_lane)
+        self.turn_left_right_lane.setGeometry(QtCore.QRect(20, 20, 91, 17))
+        self.turn_left_right_lane.setObjectName("turn_left_right_lane")
+        self.red_light_right = QtWidgets.QCheckBox(self.right_lane)
+        self.red_light_right.setGeometry(QtCore.QRect(380, 20, 71, 17))
+        self.red_light_right.setObjectName("red_light_right")
+        self.tabWidget.addTab(self.right_lane, "")
         self.Tab.addTab(self.Setting, "")
         self.Draw = QtWidgets.QWidget()
         self.Draw.setStyleSheet("QWidget {\n"
 "background-color: rgb(120, 169, 202);\n"
 "}")
         self.Draw.setObjectName("Draw")
-        self.Line = QtWidgets.QPushButton(self.Draw)
-        self.Line.setGeometry(QtCore.QRect(10, 500, 41, 41))
+        self.Line_left = QtWidgets.QPushButton(self.Draw)
+        self.Line_left.setGeometry(QtCore.QRect(10, 500, 41, 41))
         font = QtGui.QFont()
         font.setFamily("Poppins SemiBold")
         font.setPointSize(12)
         font.setBold(True)
         font.setWeight(75)
-        self.Line.setFont(font)
-        self.Line.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.Line.setStyleSheet("QPushButton#Line:disabled {\n"
+        self.Line_left.setFont(font)
+        self.Line_left.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_left.setStyleSheet("QPushButton:disabled {\n"
 "     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
 "}\n"
-"QPushButton#Line:hover:!pressed {\n"
+"QPushButton:hover:!pressed {\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
 "}\n"
-"QPushButton#Line {\n"
+"QPushButton {\n"
 "    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
 "    border: none; \n"
 "    color: white;\n"
 "    border-radius: 20px;\n"
 "}\n"
 "")
-        self.Line.setText("")
+        self.Line_left.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("static/icon/line-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Line.setIcon(icon1)
-        self.Line.setIconSize(QtCore.QSize(24, 24))
-        self.Line.setAutoRepeat(False)
-        self.Line.setAutoExclusive(False)
-        self.Line.setFlat(False)
-        self.Line.setObjectName("Line")
+        icon1.addPixmap(QtGui.QPixmap("static/icon/left-land-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_left.setIcon(icon1)
+        self.Line_left.setIconSize(QtCore.QSize(24, 24))
+        self.Line_left.setAutoRepeat(False)
+        self.Line_left.setAutoExclusive(False)
+        self.Line_left.setFlat(False)
+        self.Line_left.setObjectName("Line_left")
         self.Square = QtWidgets.QPushButton(self.Draw)
-        self.Square.setGeometry(QtCore.QRect(70, 500, 41, 41))
+        self.Square.setGeometry(QtCore.QRect(350, 500, 41, 41))
         font = QtGui.QFont()
         font.setFamily("Poppins SemiBold")
         font.setPointSize(12)
@@ -463,7 +990,7 @@ class Ui_MainWindow(object):
 "}")
         self.Draw_line.setObjectName("Draw_line")
         self.Delete = QtWidgets.QPushButton(self.Draw)
-        self.Delete.setGeometry(QtCore.QRect(130, 500, 41, 41))
+        self.Delete.setGeometry(QtCore.QRect(820, 500, 41, 41))
         font = QtGui.QFont()
         font.setFamily("Poppins SemiBold")
         font.setPointSize(12)
@@ -493,6 +1020,170 @@ class Ui_MainWindow(object):
         self.Delete.setAutoExclusive(False)
         self.Delete.setFlat(False)
         self.Delete.setObjectName("Delete")
+        self.Line_Center = QtWidgets.QPushButton(self.Draw)
+        self.Line_Center.setGeometry(QtCore.QRect(60, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_Center.setFont(font)
+        self.Line_Center.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_Center.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_Center.setText("")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("static/icon/center-land-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_Center.setIcon(icon4)
+        self.Line_Center.setIconSize(QtCore.QSize(24, 24))
+        self.Line_Center.setAutoRepeat(False)
+        self.Line_Center.setAutoExclusive(False)
+        self.Line_Center.setFlat(False)
+        self.Line_Center.setObjectName("Line_Center")
+        self.Line_Right = QtWidgets.QPushButton(self.Draw)
+        self.Line_Right.setGeometry(QtCore.QRect(110, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_Right.setFont(font)
+        self.Line_Right.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_Right.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_Right.setText("")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("static/icon/right-land-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_Right.setIcon(icon5)
+        self.Line_Right.setIconSize(QtCore.QSize(24, 24))
+        self.Line_Right.setAutoRepeat(False)
+        self.Line_Right.setAutoExclusive(False)
+        self.Line_Right.setFlat(False)
+        self.Line_Right.setObjectName("Line_Right")
+        self.Line_Center_2 = QtWidgets.QPushButton(self.Draw)
+        self.Line_Center_2.setGeometry(QtCore.QRect(230, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_Center_2.setFont(font)
+        self.Line_Center_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_Center_2.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_Center_2.setText("")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("static/icon/keep-forward-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_Center_2.setIcon(icon6)
+        self.Line_Center_2.setIconSize(QtCore.QSize(24, 24))
+        self.Line_Center_2.setAutoRepeat(False)
+        self.Line_Center_2.setAutoExclusive(False)
+        self.Line_Center_2.setFlat(False)
+        self.Line_Center_2.setObjectName("Line_Center_2")
+        self.Line_left_2 = QtWidgets.QPushButton(self.Draw)
+        self.Line_left_2.setGeometry(QtCore.QRect(180, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_left_2.setFont(font)
+        self.Line_left_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_left_2.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_left_2.setText("")
+        icon7 = QtGui.QIcon()
+        icon7.addPixmap(QtGui.QPixmap("static/icon/turn-left-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_left_2.setIcon(icon7)
+        self.Line_left_2.setIconSize(QtCore.QSize(24, 24))
+        self.Line_left_2.setAutoRepeat(False)
+        self.Line_left_2.setAutoExclusive(False)
+        self.Line_left_2.setFlat(False)
+        self.Line_left_2.setObjectName("Line_left_2")
+        self.Line_Right_2 = QtWidgets.QPushButton(self.Draw)
+        self.Line_Right_2.setGeometry(QtCore.QRect(280, 500, 41, 41))
+        font = QtGui.QFont()
+        font.setFamily("Poppins SemiBold")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Line_Right_2.setFont(font)
+        self.Line_Right_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.Line_Right_2.setStyleSheet("QPushButton:disabled {\n"
+"     background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0.273, stop:0.0170455 rgba(118, 0, 0, 255), stop:0.727273 rgba(61, 0, 0, 255));\n"
+"}\n"
+"QPushButton:hover:!pressed {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
+"}\n"
+"QPushButton {\n"
+"    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(46, 106, 147, 255), stop:1 rgba(50, 169, 255, 255));\n"
+"    border: none; \n"
+"    color: white;\n"
+"    border-radius: 20px;\n"
+"}\n"
+"")
+        self.Line_Right_2.setText("")
+        icon8 = QtGui.QIcon()
+        icon8.addPixmap(QtGui.QPixmap("static/icon/turn-right-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Line_Right_2.setIcon(icon8)
+        self.Line_Right_2.setIconSize(QtCore.QSize(24, 24))
+        self.Line_Right_2.setAutoRepeat(False)
+        self.Line_Right_2.setAutoExclusive(False)
+        self.Line_Right_2.setFlat(False)
+        self.Line_Right_2.setObjectName("Line_Right_2")
+        self.Square.raise_()
+        self.Draw_line.raise_()
+        self.Delete.raise_()
+        self.Line_Center.raise_()
+        self.Line_Right.raise_()
+        self.Line_left.raise_()
+        self.Line_Center_2.raise_()
+        self.Line_left_2.raise_()
+        self.Line_Right_2.raise_()
         self.Tab.addTab(self.Draw, "")
         self.Monitor = QtWidgets.QWidget()
         self.Monitor.setStyleSheet("QWidget {\n"
@@ -522,9 +1213,9 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.Play.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("static/icon/play-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Play.setIcon(icon4)
+        icon9 = QtGui.QIcon()
+        icon9.addPixmap(QtGui.QPixmap("static/icon/play-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Play.setIcon(icon9)
         self.Play.setIconSize(QtCore.QSize(16, 16))
         self.Play.setAutoRepeat(False)
         self.Play.setAutoExclusive(False)
@@ -554,9 +1245,9 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.Stop.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("static/icon/stop-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Stop.setIcon(icon5)
+        icon10 = QtGui.QIcon()
+        icon10.addPixmap(QtGui.QPixmap("static/icon/stop-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Stop.setIcon(icon10)
         self.Stop.setIconSize(QtCore.QSize(16, 16))
         self.Stop.setAutoRepeat(False)
         self.Stop.setAutoExclusive(False)
@@ -568,6 +1259,22 @@ class Ui_MainWindow(object):
 "    background-color: rgb(62, 62, 62);\n"
 "}")
         self.Camera_view.setObjectName("Camera_view")
+        self.Violation_name = QtWidgets.QLabel(self.Monitor)
+        self.Violation_name.setGeometry(QtCore.QRect(600, 500, 261, 41))
+        font = QtGui.QFont()
+        font.setFamily("Microsoft JhengHei")
+        font.setPointSize(9)
+        self.Violation_name.setFont(font)
+        self.Violation_name.setStyleSheet("QLabel {\n"
+"      background-color: #fff;\n"
+"      border: none; \n"
+"    color: black;\n"
+"    border-radius: 20px;\n"
+"}")
+        self.Violation_name.setScaledContents(False)
+        self.Violation_name.setWordWrap(False)
+        self.Violation_name.setIndent(20)
+        self.Violation_name.setObjectName("Violation_name")
         self.Tab.addTab(self.Monitor, "")
         self.Export = QtWidgets.QWidget()
         self.Export.setStyleSheet("QWidget {\n"
@@ -599,9 +1306,9 @@ class Ui_MainWindow(object):
 "     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 15, 43, 255), stop:1 rgba(36, 115, 173, 255));\n"
 "}")
         self.Save_video.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("static/icon/save-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Save_video.setIcon(icon6)
+        icon11 = QtGui.QIcon()
+        icon11.addPixmap(QtGui.QPixmap("static/icon/save-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Save_video.setIcon(icon11)
         self.Save_video.setIconSize(QtCore.QSize(24, 24))
         self.Save_video.setObjectName("Save_video")
         self.Table = QtWidgets.QTableWidget(self.Export)
@@ -718,9 +1425,9 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.Close.setText("")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("static/icon/times-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Close.setIcon(icon7)
+        icon12 = QtGui.QIcon()
+        icon12.addPixmap(QtGui.QPixmap("static/icon/times-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Close.setIcon(icon12)
         self.Close.setIconSize(QtCore.QSize(16, 16))
         self.Close.setObjectName("Close")
         self.Minimun = QtWidgets.QPushButton(self.groupBox)
@@ -737,9 +1444,9 @@ class Ui_MainWindow(object):
 "}\n"
 "")
         self.Minimun.setText("")
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("static/icon/minimum-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.Minimun.setIcon(icon8)
+        icon13 = QtGui.QIcon()
+        icon13.addPixmap(QtGui.QPixmap("static/icon/minimum-solid.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.Minimun.setIcon(icon13)
         self.Minimun.setObjectName("Minimun")
         self.blank_2 = QtWidgets.QLabel(self.centralwidget)
         self.blank_2.setGeometry(QtCore.QRect(0, 588, 881, 4))
@@ -751,7 +1458,8 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.Tab.setCurrentIndex(3)
+        self.Tab.setCurrentIndex(0)
+        self.tabWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -762,15 +1470,55 @@ class Ui_MainWindow(object):
         self.Filename_2.setText(_translate("MainWindow", "Browse your saving folder here!"))
         self.Name_2.setText(_translate("MainWindow", "Result folder"))
         self.Copy_Right.setText(_translate("MainWindow", "© dev by Nguyen Trieu Phong"))
-        self.Tcounter.setText(_translate("MainWindow", "Counter for the vehicles crossing the line"))
-        self.Vcounter.setText(_translate("MainWindow", "Counter for the vehicles in violation"))
+        self.TLable0.setText(_translate("MainWindow", "Crossing left  line 1:"))
+        self.TLable1.setText(_translate("MainWindow", "Crossing center line 1:"))
+        self.TLabel2.setText(_translate("MainWindow", "Crossing right line 1:"))
+        self.Tcounter_0.setText(_translate("MainWindow", "0"))
+        self.Tcounter_1.setText(_translate("MainWindow", "0"))
+        self.Tcounter_2.setText(_translate("MainWindow", "0"))
+        self.Filename_3.setText(_translate("MainWindow", "Browse your saving folder here!"))
+        self.Filename_4.setText(_translate("MainWindow", "Browse your saving folder here!"))
+        self.Filename_5.setText(_translate("MainWindow", "Browse your saving folder here!"))
+        self.Filename_6.setText(_translate("MainWindow", "Browse your saving folder here!"))
+        self.Filename_7.setText(_translate("MainWindow", "Browse your saving folder here!"))
+        self.Filename_8.setText(_translate("MainWindow", "Browse your saving folder here!"))
+        self.Name_4.setText(_translate("MainWindow", "Crossing line counter"))
+        self.TLabel2_2.setText(_translate("MainWindow", "Crossing left line 2:"))
+        self.TLabel2_3.setText(_translate("MainWindow", "Crossing  center line 2:"))
+        self.TLabel2_4.setText(_translate("MainWindow", "Crossing  right line 2:"))
+        self.Tcounter_3.setText(_translate("MainWindow", "0"))
+        self.Tcounter_4.setText(_translate("MainWindow", "0"))
+        self.Tcounter_5.setText(_translate("MainWindow", "0"))
+        self.Vcounter.setText(_translate("MainWindow", "0"))
+        self.Filename_9.setText(_translate("MainWindow", "Browse your saving folder here!"))
+        self.Filename_10.setText(_translate("MainWindow", "Browse your saving folder here!"))
+        self.Vcounter_2.setText(_translate("MainWindow", "0"))
+        self.Name_5.setText(_translate("MainWindow", "Violation counter"))
+        self.TLabel2_5.setText(_translate("MainWindow", "Crossing the red light:"))
+        self.TLabel2_6.setText(_translate("MainWindow", "Wrong lane:"))
         self.Name_3.setText(_translate("MainWindow", "Display setting"))
         self.ShowLabel.setText(_translate("MainWindow", "Showing the detected label on video"))
         self.ShowBox.setText(_translate("MainWindow", "Showing the detected box on video"))
         self.SaveImage.setText(_translate("MainWindow", "Save image of the vehicle in violation"))
         self.SaveVideo.setText(_translate("MainWindow", "Save video of the vehicle in violation"))
+        self.turn_left_left_lane.setText(_translate("MainWindow", "Turn left"))
+        self.go_forward_left_lane.setText(_translate("MainWindow", "Go forward"))
+        self.turn_right_left_lane.setText(_translate("MainWindow", "Turn right"))
+        self.red_light_left.setText(_translate("MainWindow", "Red light"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.left_lane), _translate("MainWindow", "Left lane"))
+        self.turn_right_center_lane.setText(_translate("MainWindow", "Turn right"))
+        self.go_forwar_center_lane.setText(_translate("MainWindow", "Go forward"))
+        self.turn_left_center_lane.setText(_translate("MainWindow", "Turn left"))
+        self.red_light_center.setText(_translate("MainWindow", "Red light"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.center_lane), _translate("MainWindow", "Center lane"))
+        self.turn_right_right_lane.setText(_translate("MainWindow", "Turn right"))
+        self.go_forward_right_lane.setText(_translate("MainWindow", "Go forward"))
+        self.turn_left_right_lane.setText(_translate("MainWindow", "Turn left"))
+        self.red_light_right.setText(_translate("MainWindow", "Red light"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.right_lane), _translate("MainWindow", "Right lane"))
         self.Tab.setTabText(self.Tab.indexOf(self.Setting), _translate("MainWindow", "Setting"))
         self.Tab.setTabText(self.Tab.indexOf(self.Draw), _translate("MainWindow", "Draw"))
+        self.Violation_name.setText(_translate("MainWindow", "Violation file name here!"))
         self.Tab.setTabText(self.Tab.indexOf(self.Monitor), _translate("MainWindow", "Home"))
         item = self.Table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "ID"))

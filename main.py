@@ -35,10 +35,12 @@ boundaries = [[((0, 110, 95), (20, 255, 255))],  # Red
               [((80, 90, 110), (90, 150, 255))]]  # Green
 
 global rect
-global line
+global lane_left, lane_center, lane_right
+global direct_left, direct_center, direct_right
 global vertical
 
-CATCHING_COLOR = 'red'
+BLOW_THE_X_SIGN = 'green'
+WRONG_LANE_X_SIGN = 'green'
 
 
 def getFrame(video_dir, myFrameNumber):
@@ -102,8 +104,9 @@ class CameraView(QWidget):
     def __init__(self, parent=None):
         super(CameraView, self).__init__(parent)
         self.image = None
-        global rect, line
-        rect, line = [], []
+        global rect
+        global lane_left, lane_center, lane_right
+        global direct_left, direct_center, direct_right
 
     def setImage(self, image):
         self.image = image
@@ -113,17 +116,47 @@ class CameraView(QWidget):
 
     def paintEvent(self, event):
         qp.begin(self)
-        pen = QPen(QColor(255, 255, 255), 2, QtCore.Qt.SolidLine)
-        qp.setPen(pen)
         if self.image:
             qp.drawImage(QPoint(0, 0), self.image)
         br = QtGui.QBrush(QColor(0, 252, 156, 40))
         qp.setBrush(br)
 
         for item in rect:
+            pen = QPen(QColor(255, 255, 255), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
             qp.drawRect(QRect(item[0], item[1]))
-        for item in line:
+
+        for item in lane_left:
+            pen = QtGui.QPen(QColor(255, 0, 0), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
             qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("line left 1"))
+        for item in lane_center:
+            pen = QtGui.QPen(QColor(255, 255, 0), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("line center 1"))
+        for item in lane_right:
+            pen = QtGui.QPen(QColor(0, 0, 255), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("line right 1"))
+
+        for item in direct_left:
+            pen = QtGui.QPen(QColor(255, 0, 0), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("line left 2"))
+        for item in direct_center:
+            pen = QtGui.QPen(QColor(255, 255, 0), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("line center 2"))
+        for item in direct_right:
+            pen = QtGui.QPen(QColor(0, 0, 255), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("line right 2"))
         qp.end()
 
 
@@ -145,19 +178,6 @@ class ExportView(QWidget):
         qp.end()
 
 
-def calAngle(xy):
-    global vertical
-    vertical = None
-    x = abs(xy[0].x() - xy[1].x())
-    y = abs(xy[0].y() - xy[1].y())
-    angle = math.degrees(math.atan2(y, x))
-    if angle < 45:
-        vertical = 0
-    elif angle > 45:
-        vertical = 1
-    return vertical
-
-
 def ccw(A, B, C):
     return (C[1] - A[1]) * (B[0] - A[0]) > (B[1] - A[1]) * (C[0] - A[0])
 
@@ -171,10 +191,15 @@ class DrawObject(QWidget):
         super(DrawObject, self).__init__(parent)
         self.image = None
         self.flag = None
+        self.direct = None
         self.img_holder = None
         self.screen = None
-        global rect, line
-        rect, line = [], []
+        global rect
+        global lane_left, lane_center, lane_right
+        global direct_left, direct_center, direct_right
+        rect = []
+        lane_left, lane_center, lane_right = [], [], []
+        direct_left, direct_center, direct_right = [], [], []
         self.begin = QPoint()
         self.end = QPoint()
         self.show()
@@ -185,39 +210,91 @@ class DrawObject(QWidget):
         self.setMinimumSize(img_size)
         self.update()
 
-    def setMode(self, flag):
-        self.flag = flag
+    def setMode(self, mode_flag, direct_flag):
+        self.flag = mode_flag
+        self.direct = direct_flag
         self.update()
 
     def goBack(self):
         if self.flag == 'rect' and len(rect) > 0:
             rect.pop()
-        elif self.flag == 'line' and len(line) > 0:
-            line.pop()
+        elif self.flag == 'lane' and self.direct == 'left' and len(lane_left) > 0:
+            lane_left.pop()
+        elif self.flag == 'lane' and self.direct == 'center' and len(lane_center) > 0:
+            lane_center.pop()
+        elif self.flag == 'lane' and self.direct == 'right' and len(lane_right) > 0:
+            lane_right.pop()
+        elif self.flag == 'direct' and self.direct == 'left' and len(direct_left) > 0:
+            direct_left.pop()
+        elif self.flag == 'direct' and self.direct == 'center' and len(direct_center) > 0:
+            direct_center.pop()
+        elif self.flag == 'direct' and self.direct == 'right' and len(direct_right) > 0:
+            direct_right.pop()
         self.update()
 
     def paintEvent(self, event):
         qp.begin(self)
         if self.image:
             qp.drawImage(QPoint(0, 0), self.image)
-
         br = QtGui.QBrush(QColor(0, 252, 156, 40))
         qp.setBrush(br)
-        pen = QtGui.QPen(QColor(255, 255, 255), 2, QtCore.Qt.SolidLine)
-        qp.setPen(pen)
 
         for item in rect:
+            pen = QtGui.QPen(QColor(255, 255, 255), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
             qp.drawRect(QRect(item[0], item[1]))
-        for item in line:
+
+        for item in lane_left:
+            pen = QtGui.QPen(QColor(255, 0, 0), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
             qp.drawLine(item[0], item[1])
-            qp.drawText(item[0], str(line.index(item)))
+            qp.drawText(item[0], str("line left 1"))
+        for item in lane_center:
+            pen = QtGui.QPen(QColor(255, 255, 0), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("line center 1"))
+        for item in lane_right:
+            pen = QtGui.QPen(QColor(0, 0, 255), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("line right 1"))
+
+        for item in direct_left:
+            pen = QtGui.QPen(QColor(255, 0, 0), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("line left 2"))
+        for item in direct_center:
+            pen = QtGui.QPen(QColor(255, 255, 0), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("center line 2"))
+        for item in direct_right:
+            pen = QtGui.QPen(QColor(0, 0, 255), 2, QtCore.Qt.SolidLine)
+            qp.setPen(pen)
+            qp.drawLine(item[0], item[1])
+            qp.drawText(item[0], str("right line 2"))
         qp.end()
 
     def mousePressEvent(self, event):
         self.begin = event.pos()
         self.end = event.pos()
-        # if self.flag == "line" and len(line) > 0:
-        #     line.pop()
+        if self.direct == 'left':
+            if self.flag == 'lane' and len(lane_left) == 1:
+                lane_left.pop()
+            elif self.flag == 'direct' and len(direct_left) == 1:
+                direct_left.pop()
+        elif self.direct == 'center':
+            if self.flag == 'lane' and len(lane_center) == 1:
+                lane_center.pop()
+            elif self.flag == 'direct' and len(direct_center) == 1:
+                direct_center.pop()
+        elif self.direct == 'right':
+            if self.flag == 'lane' and len(lane_right) == 1:
+                lane_right.pop()
+            elif self.flag == 'direct' and len(direct_right) == 1:
+                direct_right.pop()
         self.update()
 
     def mouseMoveEvent(self, event):
@@ -227,8 +304,21 @@ class DrawObject(QWidget):
     def mouseReleaseEvent(self, event):
         self.end = event.pos()
         self.update()
-        if self.flag == "line":
-            line.append([self.begin, self.end])
+        if self.direct == 'left':
+            if self.flag == 'lane':
+                lane_left.append([self.begin, self.end])
+            elif self.flag == 'direct':
+                direct_left.append([self.begin, self.end])
+        elif self.direct == 'center':
+            if self.flag == 'lane':
+                lane_center.append([self.begin, self.end])
+            elif self.flag == 'direct':
+                direct_center.append([self.begin, self.end])
+        elif self.direct == 'right':
+            if self.flag == 'lane':
+                lane_right.append([self.begin, self.end])
+            elif self.flag == 'direct':
+                direct_right.append([self.begin, self.end])
         elif self.flag == 'rect':
             rect.append([self.begin, self.end])
 
@@ -259,7 +349,12 @@ class MyWindow(QMainWindow):
         self.ui.Browser_2.clicked.connect(self.setSaveFolder)
         self.ui.Play.clicked.connect(self.startVideo)
         self.ui.Stop.clicked.connect(self.stopVideo)
-        self.ui.Line.clicked.connect(self.setLine)
+        self.ui.Line_left.clicked.connect(self.setLeftLane)
+        self.ui.Line_Center.clicked.connect(self.setCenterLane)
+        self.ui.Line_Right.clicked.connect(self.setRightLane)
+        self.ui.Line_left_2.clicked.connect(self.setLeftDirect)
+        self.ui.Line_Center_2.clicked.connect(self.setCenterDirect)
+        self.ui.Line_Right_2.clicked.connect(self.setRightDirect)
         self.ui.Square.clicked.connect(self.setRect)
         self.ui.Delete.clicked.connect(self.GoBack)
         self.ui.Save_video.clicked.connect(self.exportVideo)
@@ -279,7 +374,14 @@ class MyWindow(QMainWindow):
         self.mapping = {}
         self.violation = []
         self.k_counter = None
+        self.t_counter1 = []
+        self.t_counter2 = []
+        self.t_counter3 = []
+        self.t_counter4 = []
+        self.t_counter5 = []
+        self.t_counter6 = []
         self.v_counter = []
+        self.w_counter = []
         self.current_time = 0
         self.screen = self.ui.Camera_view.frameSize().height()
         self.ui.Camera_view = CameraView(self.ui.Camera_view)
@@ -291,7 +393,6 @@ class MyWindow(QMainWindow):
             "Open video", self.openFileNameLabel.text(),
             "Videos (*.mp4)"
         )
-        fileName = QUrl.fromLocalFile(self.fileDir).fileName()
         if self.fileDir:
             fileName = shortDir(self.fileDir)
             self.ui.Filename.setText(fileName)
@@ -316,11 +417,26 @@ class MyWindow(QMainWindow):
                                                                                         folderName + "/Videos")
         self.ui.Result_dir.setText(Saving_info)
 
-    def setLine(self):
-        self.ui.Draw_line.setMode("line")
+    def setLeftLane(self):
+        self.ui.Draw_line.setMode("lane", "left")
+
+    def setCenterLane(self):
+        self.ui.Draw_line.setMode("lane", "center")
+
+    def setRightLane(self):
+        self.ui.Draw_line.setMode("lane", "right")
+
+    def setLeftDirect(self):
+        self.ui.Draw_line.setMode("direct", "left")
+
+    def setCenterDirect(self):
+        self.ui.Draw_line.setMode("direct", "center")
+
+    def setRightDirect(self):
+        self.ui.Draw_line.setMode("direct", "right")
 
     def setRect(self):
-        self.ui.Draw_line.setMode("rect")
+        self.ui.Draw_line.setMode("rect", None)
 
     def GoBack(self):
         self.ui.Draw_line.goBack()
@@ -342,7 +458,7 @@ class MyWindow(QMainWindow):
 
     def openImage(self, index):
         keys = list(self.mapping.keys())
-        file = 'Images/{}.jpg'.format(keys[index.row()])
+        file = 'Images/{}'.format(keys[index.row()])
         file_dir = os.path.join(self.saveDir, file)
         pixmap = QPixmap(file_dir)
         pixmap = pixmap.scaledToWidth(551)
@@ -364,8 +480,49 @@ class MyWindow(QMainWindow):
         clip = clip.subclip(start, end)
         clip.write_videofile(file_dir, audio=False, verbose=False, logger=None)
 
+    def updateTable(self, file_name):
+        if self.current_time - 2 > 0:
+            start = self.current_time - 2
+        else:
+            start = 0
+        end = self.current_time + 2
+        self.mapping[file_name] = [start, end]
+        num_cols = 1
+        num_rows = len(self.mapping.keys())
+        self.ui.Table.setColumnCount(num_cols)
+        self.ui.Table.setRowCount(num_rows)
+        idx = 0
+        for key, value in self.mapping.items():
+            self.ui.Table.setItem(idx, 0, QTableWidgetItem('{}.jpg'.format(key)))
+            idx += 1
+
+    def updateWrongLane(self, img, x0, y0, violation, track_id, time_stamp):
+        self.w_counter.append(track_id)
+        self.ui.Vcounter_2.setText(str(len(list(set(self.w_counter)))))
+        cv2.rectangle(img, (x0, y0 - 10), (x0 + 10, y0), (255, 0, 0), -1)
+        file_name = "{}_{}".format(violation, time_stamp)
+        if self.ui.SaveImage.isChecked():
+            cv2.imwrite("{}/Images/{}.jpg"
+                        .format(self.saveDir, file_name), img)
+            self.ui.Violation_name.setText(file_name)
+            if self.ui.SaveVideo.isChecked():
+                self.updateTable(file_name)
+
+    def updateCrossLight(self, img, x0, y0, track_id, time_stamp):
+        self.v_counter.append(track_id)
+        self.ui.Vcounter.setText(str(len(list(set(self.v_counter)))))
+        cv2.rectangle(img, (x0, y0 - 10), (x0 + 10, y0), (0, 0, 255), -1)
+        file_name = "vuot_den_{}".format(time_stamp)
+        if self.ui.SaveImage.isChecked():
+            cv2.imwrite("{}/Images/{}.jpg"
+                        .format(self.saveDir, file_name), img)
+            self.ui.Violation_name.setText(file_name)
+            if self.ui.SaveVideo.isChecked():
+                self.updateTable(file_name)
+
+
     def update(self):
-        global vertical, line
+        global vertical
         cap = cv2.VideoCapture(self.fileDir)
         while cap.isOpened():
             if self.stop is True or not cap.isOpened():
@@ -410,43 +567,92 @@ class MyWindow(QMainWindow):
                     cv2.rectangle(img, (x0, y0), (x1, y1), color, 2)
                 if track_id in self.previous:
                     cv2.line(img, self.previous[track_id], self.current[track_id], color, 1)
-                    for k in range(len(line)):
-                        start_line = line[k][0].x(), line[k][0].y()
-                        end_line = line[k][1].x(), line[k][1].y()
-                        if intersect(self.previous[track_id], self.current[track_id], start_line, end_line):
-                            self.k_counter = ''
-                            for key, value in self.counter.items():
-                                self.k_counter = "Number of vehicles crossing line {}: <font color='green'> {} " \
-                                                 "</font> <br> ".format(key, len(set(value)) + 1) + self.k_counter
-                            if current_color == CATCHING_COLOR and calAngle(line[k]) == 0:
-                                self.v_counter.append(track_id)
-                                cv2.rectangle(img, (x0, y0 - 10), (x0 + 10, y0), (0, 0, 255), -1)
-                                if self.ui.SaveImage.isChecked():
-                                    cv2.imwrite("{}/Images/{}.jpg".format(self.saveDir, time_stamp), img)
-                                if self.ui.SaveVideo.isChecked():
-                                    if self.current_time - 2 > 0:
-                                        start = self.current_time - 2
-                                    else:
-                                        start = 0
-                                    end = self.current_time + 2
-                                    self.mapping[time_stamp] = [start, end]
-                                    num_cols = 1
-                                    num_rows = len(self.mapping.keys())
-                                    self.ui.Table.setColumnCount(num_cols)
-                                    self.ui.Table.setRowCount(num_rows)
-                                    idx = 0
-                                    for key, value in self.mapping.items():
-                                        self.ui.Table.setItem(idx, 0, QTableWidgetItem('{}.jpg'.format(key)))
-                                        idx += 1
+                    line_group0 = [lane_left, lane_center, lane_right]
+                    for element in line_group0:
+                        if len(element) > 0:
+                            start_line = element[0][0].x(), element[0][0].y()
+                            end_line = element[0][1].x(), element[0][1].y()
+                            if intersect(self.previous[track_id], self.current[track_id], start_line, end_line):
+                                if line_group0.index(element) == 0:
+                                    self.t_counter1.append(track_id)
+                                    if current_color == BLOW_THE_X_SIGN and not self.ui.red_light_left.isChecked():
+                                        self.updateCrossLight(img, x0, y0, track_id, time_stamp)
+                                elif line_group0.index(element) == 1:
+                                    self.t_counter2.append(track_id)
+                                    if current_color == BLOW_THE_X_SIGN and not self.ui.red_light_center.isChecked():
+                                        self.updateCrossLight(img, x0, y0, track_id, time_stamp)
+                                elif line_group0.index(element) == 2:
+                                    self.t_counter3.append(track_id)
+                                    if current_color == BLOW_THE_X_SIGN and not self.ui.red_light_right.isChecked():
+                                        self.updateCrossLight(img, x0, y0, track_id, time_stamp)
 
-                            if k in self.counter:
-                                self.counter[k].append(track_id)
-                            else:
-                                self.counter[k] = []
-                                self.counter[k].append(track_id)
-                    self.ui.Tcounter.setText(self.k_counter)
-                    self.ui.Vcounter.setText("Number of vehicles in violation: <font color='red'> {} </font>"
-                                             .format(len(set(self.v_counter))))
+                    '''
+                    t_counter1: line 1
+                    t_counter2: line 2
+                    t_counter3: line 3
+                    t_counter4: line 4
+                    t_counter5: line 5
+                    t_counter6: line 6
+                    '''
+                    line_group1 = [direct_left, direct_center, direct_right]
+                    for element in line_group1:
+                        if len(element) > 0:
+                            start_line = element[0][0].x(), element[0][0].y()
+                            end_line = element[0][1].x(), element[0][1].y()
+                            if intersect(self.previous[track_id], self.current[track_id], start_line, end_line):
+
+                                '''
+                                xét tại thời điểm cắt qua line 4
+                                '''
+                                if line_group1.index(element) == 0:
+                                    self.t_counter4.append(track_id)
+                                    self.ui.Tcounter_3.setText(str(len(list(set(self.t_counter4)))))
+                                    if current_color == WRONG_LANE_X_SIGN:
+                                        if track_id in self.t_counter2 and \
+                                                not self.ui.turn_left_center_lane.isChecked():
+                                            violation = "sai_lan_giua"
+                                            self.updateWrongLane(img, x0, y0, violation, track_id, time_stamp)
+
+                                        elif track_id in self.t_counter3 and \
+                                                not self.ui.turn_left_right_lane.isChecked():
+                                            violation = "sai_lan_phai"
+                                            self.updateWrongLane(img, x0, y0, violation, track_id, time_stamp)
+
+                                '''
+                                xét tại thời điểm cắt qua line 5
+                                '''
+                                if line_group1.index(element) == 1:
+                                    self.t_counter5.append(track_id)
+                                    self.ui.Tcounter_4.setText(str(len(list(set(self.t_counter5)))))
+                                    if current_color == WRONG_LANE_X_SIGN:
+                                        if track_id in self.t_counter1 and \
+                                                not self.ui.go_forward_left_lane.isChecked():
+                                            violation = "sai_lan_trai"
+                                            self.updateWrongLane(img, x0, y0, violation, track_id, time_stamp)
+                                        elif track_id in self.t_counter3 and \
+                                                not self.ui.go_forward_right_lane.isChecked():
+                                            violation = "sai_lan_phai"
+                                            self.updateWrongLane(img, x0, y0, violation, track_id, time_stamp)
+
+                                '''
+                                xét tại thời điểm cắt qua line 6
+                                '''
+                                if line_group1.index(element) == 2:
+                                    self.t_counter6.append(track_id)
+                                    self.ui.Tcounter_5.setText(str(len(list(set(self.t_counter6)))))
+                                    if current_color == WRONG_LANE_X_SIGN:
+                                        if track_id in self.t_counter1 and \
+                                                not self.ui.turn_right_left_lane.isChecked():
+                                            violation = "sai_lan_trai"
+                                            self.updateWrongLane(img, x0, y0, violation, track_id, time_stamp)
+                                        elif track_id in self.t_counter2 and \
+                                                not self.ui.turn_right_center_lane.isChecked():
+                                            violation = "sai_lan_giua"
+                                            self.updateWrongLane(img, x0, y0, violation, track_id, time_stamp)
+
+                    self.ui.Tcounter_0.setText(str(len(list(set(self.t_counter1)))))
+                    self.ui.Tcounter_1.setText(str(len(list(set(self.t_counter2)))))
+                    self.ui.Tcounter_2.setText(str(len(list(set(self.t_counter3)))))
                 self.previous[track_id] = self.current[track_id]
             wd01 = QtImage(self.screen, img)
             self.ui.Camera_view.setImage(wd01)
